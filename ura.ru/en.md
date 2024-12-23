@@ -15,7 +15,7 @@ Dmitry not only demonstrated exceptional professionalism but also showed a high 
 
 We highly value the time and effort Dmitry dedicated to his work at our company and confidently recommend him as a top-tier specialist.
 
-Sincerely,
-[Your Name]
-[Your Position at URA.RU]
+Sincerely,  
+[Your Name]  
+[Your Position at URA.RU]  
 [Contact Information]

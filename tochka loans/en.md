@@ -8,7 +8,7 @@ In addition, Dmitry was involved in maintaining and improving the services under
 
 Dmitry didn’t just complete tasks—he actively participated in discussions and contributed to solutions that genuinely improved processes. His approach to work set a high standard of quality and consistently delivered tangible results.
 
-Sincerely,
-[Your Name]
-[Your Position at the Company]
+Sincerely,  
+[Your Name]  
+[Your Position at the Company]  
 [Your Contact Information]
