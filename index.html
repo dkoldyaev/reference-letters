@@ -29,7 +29,7 @@
 <body>
   <h1>Letters</h1>
   <div>
-    <label for="fileSelector">Choose a file:</label>
+    <label for="fileSelector">Choose a language:</label>
     <select id="fileSelector">
       <option value="">Select a file</option>
     </select>
@@ -39,48 +39,54 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
-    const BASE_URL = '/reference-letters'
-    const sources = ['pinsteps', 'tochka frontend-core', 'tochka loans', 'ura.ru']
-    const files = ['ru.md', 'en.md']
+    const BASE_URL = '/reference-letters';
+    const files = ['ru.md', 'en.md'];
     const fileSelector = document.getElementById('fileSelector');
     const content = document.getElementById('content');
 
-    // Load available Markdown files from the server (you can adjust this for your file list).
-    function loadFileList() {
-      sources.forEach(source => {
-        const optionGroup = document.createElement('optgroup')
-        optionGroup.label = source
+    // Function to get GET parameters from URL
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    // Get the directory from the GET parameter `source`
+    const source = getQueryParam('source');
+    if (!source) {
+      content.innerHTML = '<p>Error: Source not specified in URL. Use ?source=directory_name</p>';
+    } else {
+      // Load the language options
+      function loadFileList() {
         files.forEach(file => {
           const option = document.createElement('option');
           option.value = `${BASE_URL}/${source}/${file}`;
           option.textContent = file.split('.')[0].toLocaleUpperCase();
-          optionGroup.appendChild(option);
-        })
-        fileSelector.appendChild(optionGroup);
+          fileSelector.appendChild(option);
+        });
+      }
+
+      // Load and render the selected Markdown file
+      async function loadMarkdown(file) {
+        if (!file) {
+          content.innerHTML = '<p>Select a file to view its content.</p>';
+          return;
+        }
+        const response = await fetch(file);
+        if (!response.ok) {
+          content.innerHTML = `<p>Error loading file: ${file}</p>`;
+          return;
+        }
+        const markdown = await response.text();
+        content.innerHTML = marked.parse(markdown);
+      }
+
+      fileSelector.addEventListener('change', () => {
+        loadMarkdown(fileSelector.value);
       });
+
+      // Initialize the page
+      loadFileList();
     }
-
-    // Load and render the selected Markdown file.
-    async function loadMarkdown(file) {
-      if (!file) {
-        content.innerHTML = '<p>Select a file to view its content.</p>';
-        return;
-      }
-      const response = await fetch(file);
-      if (!response.ok) {
-        content.innerHTML = `<p>Error loading file: ${file}</p>`;
-        return;
-      }
-      const markdown = await response.text();
-      content.innerHTML = marked.parse(markdown);
-    }
-
-    fileSelector.addEventListener('change', () => {
-      loadMarkdown(fileSelector.value);
-    });
-
-    // Initialize the page
-    loadFileList();
   </script>
 </body>
 
