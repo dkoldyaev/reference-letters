@@ -1,0 +1,18 @@
+To Whom It May Concern,
+
+I am pleased to recommend Koldyaev Dmitry for any future opportunities. During our time working together at URA.RU from 2015 to 2019, Dmitry consistently demonstrated exceptional technical skills and a strong work ethic as a FullStack Developer.
+
+Dmitry was instrumental in modernizing our platform by reducing the legacy codebase by 90% through a seamless migration to Django. He also built a reliable live-streaming system that supported tens of thousands of concurrent users, ensuring stability during high-demand events. His work on creating a high-performance caching system significantly improved website speed and ensured reliability under high traffic loads.
+
+Another key contribution was Dmitry’s leadership in migrating hundreds of thousands of articles to a new data format without impacting SEO rankings. Additionally, he implemented a version control system for articles, which minimized errors and provided a clear history of changes for journalists.
+
+Dmitry is a highly skilled developer who approaches challenges with creativity and precision. He is a dedicated team player whose contributions have left a lasting positive impact on URA.RU. I am confident that he will bring the same level of expertise and commitment to any organization.
+
+Please feel free to contact me for further details about Dmitry’s contributions.
+
+Sincerely,
+
+[Your Name]  
+[Your Position at URA.RU]  
+[Contact Information]
+
